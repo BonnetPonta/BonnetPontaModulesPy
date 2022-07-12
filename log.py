@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime as dt
 
 
 class Color:
@@ -15,16 +15,20 @@ class Color:
     UNDERLINE = '\033[4m'
 
 
-def log(msg):
-    """シアン色指定メッセージ"""
-    print(f"{Color.CYAN}{msg}{Color.RESET}")
+def get_log(msg, datetime: bool = False, default_color: bool = True):
+    """ Paramters:
+        datetime`bool`: 日時を表示するか否か
+        default_color`bool`: カスタム色付きメッセージを使用するか
+    """
+    res = ""
+    if datetime:
+        res += f"[{Color.GREEN}{dt.now()}{Color.RESET}] "
+    if default_color:
+        res += str(Color.CYAN)
+    res += f"{msg}{Color.RESET}"
+    return res
 
 
-def customLog(msg):
-    """色指定なしメッセージ。Colorクラスから選択"""
-    print(f"{msg}{Color.RESET}")
-
-
-def debugLog(msg):
-    """日時付きメッセージ"""
-    print(f"[{Color.GREEN}{datetime.now()}{Color.RESET}] {Color.CYAN}{msg}{Color.RESET}")
+def log(msg, datetime: bool = False, custom_color: bool = True) -> str:
+    """メッセージ文字列をカスタマイズしてprintする"""
+    print(get_log(msg, datetime, custom_color))
