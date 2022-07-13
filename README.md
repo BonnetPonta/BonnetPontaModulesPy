@@ -1,4 +1,4 @@
-# MyModulesPy
+# BonnetPontaModulesPy
 ## なにこれ？
 自分用のpython module  
 `git clone`で`lib`ディレクトリにクローンし、`import`して使える。  
@@ -9,7 +9,7 @@
 ```
 # ディレクトリ構造
 - lib
-    └ (git clone した この)MyModulesPy
+    └ (git clone した この)BonnetPontaModulesPy
 - src
     └ app.py
 ```
@@ -22,7 +22,7 @@ import sys
 
 sys.path.append(os.getcwd())
 # これで lib から記述できるようになる
-from lib.MyModulesPy.log import Color, log_print, log_string
+from lib.BonnetPontaModulesPy.log import Color, log_print, log_string
 ```
 を呼び出し先ファイルに追記し、`import`してご使用ください。  
 `sys.path.append(os.getcwd())`をすることで、上位ディレクトリの`lib`から`import`できるようにしています。
