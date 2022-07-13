@@ -13,7 +13,7 @@
 - src
     └ app.py
 ```
-の場合、app.pyからlib/MyModuesPyを呼び出すには、  
+の場合、app.pyからlib/BonnetPontaModulesPyを呼び出すには、  
 下記の記述が必要になる。  
 ```py
 # 呼び出し先 src/app.py
