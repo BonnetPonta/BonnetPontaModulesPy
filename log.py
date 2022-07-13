@@ -1,4 +1,4 @@
-from datetime import datetime as dt
+from datetime import datetime, timedelta
 
 
 class Color:
@@ -15,18 +15,22 @@ class Color:
     UNDERLINE = '\033[4m'
 
 
-def get_log(msg, datetime: bool = False, color: Color = Color.CYAN):
-    """ Paramters:
+def jst():
+    return datetime.utcnow() + timedelta(hours=9)
+
+
+def log_string(msg, datetime: bool = False, color: Color = Color.CYAN) -> str:
+    """ Parameters:
+    --------------
         datetime`bool`: 日時を表示するか否か
         color`bool`: print色
     """
-    res = ""
+    res = f"{color}{msg}{Color.RESET}"
     if datetime:
-        res += f"[{Color.GREEN}{dt.now()}{Color.RESET}] "
-    res += f"{color}{msg}{Color.RESET}"
+        res = f"[{Color.GREEN}{jst()}{Color.RESET}] " + res
     return res
 
 
-def log(msg, datetime: bool = False, color: Color = Color.CYAN) -> str:
+def log_print(msg, datetime: bool = False, color: Color = Color.CYAN) -> str:
     """メッセージ文字列をカスタマイズしてprintする"""
-    print(get_log(msg, datetime, color))
+    print(log_string(msg, datetime, color))
