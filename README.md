@@ -35,6 +35,7 @@ logを出したいときに時に役立つmoduleたち。
 ## scrapes.py
 スクレイピングに役立つmodulesたち。  
 `requests`, `BeautifulSoup`, `aiohttp`, `selenium` に対応  
+USER_AGENT は `fake-useragent` 等で適当に拾ってくるのもあり。
 
 ## twitter.py
 twitter APIである `tweepy` を使ってTL,user tweetを取得・投稿する。  
