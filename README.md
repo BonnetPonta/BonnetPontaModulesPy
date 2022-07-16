@@ -28,13 +28,13 @@ from lib.BonnetPontaModulesPy.log import Color, log_print, log_string
 `sys.path.append(os.getcwd())`をすることで、上位ディレクトリの`lib`から`import`できるようにしています。
 
 # 各file説明
-## `log.py`
+## log.py
 logを出したいときに時に役立つmoduleたち。  
 色付き文字列、print時に色付けたいとき、日時を表示させたいとき  
 
-## `scrapes.py`
+## scrapes.py
 スクレイピングに役立つmodulesたち。  
-requests, BeautifulSoup, aiohttp, seleniumに対応  
+`requests`, `BeautifulSoup`, `aiohttp`, `selenium` に対応  
 
-## `twitter.py`
-twitter APIであるtweepyを使ってTL,user tweetを取得・投稿する。  
+## twitter.py
+twitter APIである `tweepy` を使ってTL,user tweetを取得・投稿する。  
